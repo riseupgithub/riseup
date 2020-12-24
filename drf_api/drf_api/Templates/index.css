@@ -1,0 +1,11 @@
+
+#header img{
+    width: 80px;
+  }
+  #main img{
+    max-height: 85vh;
+    object-fit: cover;
+    filter: contrast(90%);
+  }
+ 
+  

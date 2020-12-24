@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block head_content %}
+  <body>
+  <!--encabezado-->
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        
+      <img style="width: 80px;"src="https://github.com/riseupgithub/riseup/blob/main/Pillpi.png?raw=true" alt="logo">
+      <strong id="proyectoheader">Proyectos de biodiseño 1</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+     aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'rise' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pacientes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for i in name %}
+            <a  class="dropdown-item"  id={{i}} method="get" href="{% url 'paciente' %}" onClick="reply_click(this.id)">{{i}}</a>
+            {% endfor %}
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+</nav> <!--encabezado-->
+<!--Bienvenido-->
+<h1 class="text-center">Bienvenido a tu Rise up</h1>
+
+</section>
+<!--Bienvenido-->
+<!--proyecto-->
+<!--proyecto-->
+<section id="proyecto">
+  <div class="container-fluid  ">
+
+    <div class="row" id="targeta">
+      
+      <div class="col-lg-5 offset-1 col-sm-11" >
+        <h3 class="text-center"><u id="semanatitulo">Sistema de monitoreo</u></h3>
+      </div>
+      
+    </div>
+    <div class="row" id="targeta">
+      <div class="col-lg-5 offset-1 col-sm-11" id="info">
+        <button type="button" class="btn btn-warning btn-lg btn-block mb-3 mt-1" 
+        id="botonparticipar">Recuerda que puedes ver tus pacientes en la parte superior derecha</button>
+      <p>Los pacientes recuperados exitosamente de COVID-19 necesitarán apoyo para poder
+        rehabilitarse ya que estas personas <p id={{name}} >usted tiene {{perro}} pacientes </p>no solo enfrentan problemas físicos sino también
+        atraviesan daños psicosociales y cognitivos.Se estima que entre un 21% - 96% de los
+        pacientes que han sufrido de enfermedad pulmonar obstructiva desarrollan ansiedad</p>
+        
+      </div>
+      <div class="col-lg-5 offset-1 col-sm-11" id="info" class="mb-3">
+        <img src="https://image.freepik.com/foto-gratis/doctor-manos-sosteniendo-corazon-felpa_23-2148352018.jpg" alt="" style="width:70% " class="mb-2" >
+    </div>
+
+    <div class="col-12" id="info">
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+      <p>Los pacientes recuperados exitosamente de COVID-19 necesitarán apoyo para poder
+      rehabilitarse ya que estas personas no solo enfrentan problemas físicos sino también
+      atraviesan daños psicosociales y cognitivos; [1]se estima que entre un 21% - 96% de los
+      pacientes que han sufrido de enfermedad </p>
+    </div>
+  </div>
+    <!--proyecto-->
+
+</section>
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>{% endblock %}

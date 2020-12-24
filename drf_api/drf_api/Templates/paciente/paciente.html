@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block head_content %}
+<body>
+    <!--encabezado-->
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+          
+        <img style="width: 80px;"src="https://github.com/riseupgithub/riseup/blob/main/Pillpi.png?raw=true" alt="logo">
+        <strong id="proyectoheader">Proyectos de biodiseño 1</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+       aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'rise' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pacientes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for i in name %}
+              <a  class="dropdown-item"  id={{i}} method="get"  onClick="reply_click(this.id)">{{i}}</a>
+              {% endfor %}
+            </div>
+          </li>
+        </ul>
+      </div>
+</div>
+</nav> <!--encabezado-->
+    <script type="text/javascript">
+        function reply_click(clicked_id)
+        {
+            var valor=clicked_id + String(" tiene de parámetros:");
+            var img = new Image();
+            img.src ='https://es-static.z-dn.net/files/d4d/cab44c77bbb8ddaf4eb752d1fc5607b2.png'
+            document.getElementById('message').innerHTML = valor;
+            document.getElementById('ima').innerHTML = img;
+        }
+          </script>
+    <button type="button" class="btn btn-dark">En caso de que se encuentre vacía la página , volver a seleccionar que paciente desea monitorear</button>
+    <h2 id="message"></h2> 
+    <img alt="" src="" id="ima">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+</body>{% endblock %}
